@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -18,6 +20,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,7 +33,7 @@ fun CalculatorScreen(){
     var num2 by remember { mutableStateOf("") }
     var result by remember { mutableStateOf(0) }
 
-
+     val numberKeypad =
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)
         ) {
         TextField(value = num1,
@@ -47,7 +50,8 @@ fun CalculatorScreen(){
             placeholder = {
                 Text(text = "Enter num2")
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+//            KeyboardOptions = KeyboardOptions()
         )
 //        Spacer(modifier = )
         Row {
@@ -62,6 +66,10 @@ fun CalculatorScreen(){
 
             Button(onClick = {}) {
                 Text(text = "*")
+            }
+
+            Button(onClick = {}) {
+                Text(text = "/")
             }
         }
 
